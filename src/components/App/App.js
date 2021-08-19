@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-//import logo from '../../logo.svg';
-=======
->>>>>>> b7c3bd67d398e5bb8fe782a19d4a4924ea4ac7e3
 import './App.css';
 
 import BusinessList from '../BusinessList/BusinessList';
