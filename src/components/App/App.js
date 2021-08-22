@@ -6,8 +6,10 @@ import SearchBar from '../SearchBar/SearchBar';
 
 import '../BusinessList/BusinessList';
 import '../SearchBar/SearchBar';
+import '../../util/Yelp';
+import Yelp from '../../util/Yelp';
 
-const business = {
+/*const business = {
   imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
   name: 'MarginOtto Pizzeria',
   address: '1010 Paddington Way',
@@ -27,22 +29,35 @@ const businesses = [
   business,
   business
 ];
-
+*/
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      businesses: [],
+    };
 
-  searchYelp (term, location, sortBy) {
-    console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`)
-  }
+    this.searchYelp = this.searchYelp.bind(this);
+  };
+
+  searchYelp(term, location, sortBy) {
+    //console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`)
+    Yelp.search(term, location, sortBy).then((businesses) => {
+      this.setState({
+        businesses: businesses
+      });
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <h1>ravenous</h1>
           {<SearchBar searchYelp={this.searchYelp} />}
-          {<BusinessList businesses={businesses} />} 
+          {<BusinessList businesses={this.state.businesses} />} 
       </div>
     );
-  }
+  };
   
 };
 
