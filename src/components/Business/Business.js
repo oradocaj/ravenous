@@ -4,27 +4,27 @@ import './Business.css';
 
 class Business extends React.Component {
     render() {
-        const { business } = this.props;
+
         return (
             <div className="Business">
                 <div className="image-container">
-                    <a href={business.businessUrl} target="_blank" rel="noreferrer">
-                        <img src={business.imageSrc} alt=''/>
+                    <a href={this.props.business.businessUrl} target="_blank" rel="noreferrer">
+                        <img src={this.props.business.imageSrc} alt=''/>
                     </a>
                 </div>
-                <h2>{business.name}</h2>
+                <h2>{this.props.business.name}</h2>
                 <div className="Business-information">
                     <div className="Business-address">
-                        <a href={`http://maps.google.com/?q=${business.address0}, ${business.address1}, ${business.country}`} target="_blank" rel="noreferrer">
-                            <p>{business.address}</p>
+                        <a href={`http://maps.google.com/?q=${this.props.business.address0}, ${this.props.business.address1}, ${this.props.business.country}`} target="_blank" rel="noreferrer">
+                            <p>{this.props.business.address}</p>
                         </a>
-                        <p>{business.city}</p>
-                        <p>{business.state} {business.zipCode}</p>
+                        <p>{this.props.business.city}</p>
+                        <p>{this.props.business.state} {this.props.business.zipCode}</p>
                     </div>
                     <div className="Business-reviews">
-                        <h3>{business.category}</h3>
-                        <h3 className="rating">{business.rating} stars</h3>
-                        <p>{business.reviewCount} reviews</p>
+                        <h3>{this.props.business.category.toUpperCase()}</h3>
+                        <h3 className="rating">{this.props.business.rating} stars</h3>
+                        <p>{this.props.business.reviewCount} reviews</p>
                     </div>
                 </div>
             </div>

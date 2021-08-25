@@ -4,9 +4,7 @@ import './App.css';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
 
-import '../BusinessList/BusinessList';
-import '../SearchBar/SearchBar';
-import '../../util/Yelp';
+
 import Yelp from '../../util/Yelp';
 
 /*const business = {
@@ -30,15 +28,17 @@ const businesses = [
   business
 ];
 */
+
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       businesses: [],
     };
 
     this.searchYelp = this.searchYelp.bind(this);
-  };
+  }
 
   searchYelp(term, location, sortBy) {
     //console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`)
@@ -47,7 +47,7 @@ class App extends Component {
         businesses: businesses
       });
     });
-  };
+  }
 
   render() {
     return (
@@ -57,7 +57,7 @@ class App extends Component {
           {<BusinessList businesses={this.state.businesses} />} 
       </div>
     );
-  };
+  }
   
 };
 
