@@ -54,9 +54,9 @@ class SearchBar extends React.Component {
   }
 
   handleSearch (event) {
-    this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
-    
-    event.preventDefault();
+    if (this.state.term && this.state.location) {
+      this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+    } event.preventDefault()
   }
 
   handleKeyPress (event) {
@@ -69,12 +69,13 @@ class SearchBar extends React.Component {
   handleSortKeyPress () {
       //console.log('Mouse clicked!');
       this.btn.click();
+      
   };
   
   renderSortByOptions () {
     return Object.keys(this.sortByOptions).map(sortByOption => {
       let sortByOptionValue = this.sortByOptions[sortByOption];
-      return <li onMouseUp={this.handleSortByChange.bind(this, sortByOptionValue)} onClick={this.handleSortKeyPress} className={this.getSortByClass(sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>
+      return <li onMouseDown={this.handleSortByChange.bind(this, sortByOptionValue)} onClick={this.handleSortKeyPress} className={this.getSortByClass(sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>
     });
   }
 
