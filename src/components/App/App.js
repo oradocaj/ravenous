@@ -4,9 +4,9 @@ import './App.css';
 import BusinessList from '../BusinessList/BusinessList';
 import SearchBar from '../SearchBar/SearchBar';
 
-
 import Yelp from '../../util/Yelp';
 
+//API simulator object
 /*const business = {
   imageSrc: 'https://content.codecademy.com/programs/react/ravenous/pizza.jpg',
   name: 'MarginOtto Pizzeria',
@@ -54,7 +54,7 @@ class App extends Component {
       <div className="App">
         <h1>ravenous</h1>
           {<SearchBar searchYelp={this.searchYelp} />}
-          {<BusinessList businesses={this.state.businesses} />} 
+          {<BusinessList businesses={this.state.businesses} />}          
       </div>
     );
   }
