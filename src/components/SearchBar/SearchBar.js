@@ -1,8 +1,8 @@
 //import { resetWarningCache } from 'prop-types';
 import React from 'react';
-import AutocompleteText from '../Autocomplete/Autocomplete.js';
-//import '../Autocomplete/Autocomplete.css';
-import './SearchBar.css';
+import Autocomplete from '../Autocomplete/Autocomplete.js';
+import '../Autocomplete/Autocomplete.css';
+//import './SearchBar.css';
 
 class SearchBar extends React.Component {
 
@@ -90,9 +90,10 @@ class SearchBar extends React.Component {
           </ul>
         </div>
         <div className="SearchBar-fields" >
-          <input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />
-          <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={this.handleKeyPress} />          
-          <AutocompleteText />    
+          {/*<input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />}
+          <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={this.handleKeyPress} />*/}
+          <Autocomplete suggestions={["Asian", "Mexican", "Italian", "English", "French"]} />
+          <Autocomplete suggestions={["Rome", "Vienna", "London", "Paris", "Madrid"]} />
         </div>        
         <div className="SearchBar-submit">          
           <a onClick={this.handleSearch} ref={node => (this.btn = node)}>Let's Go</a>
