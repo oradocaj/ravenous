@@ -5,7 +5,6 @@ import '../Autocomplete/Autocomplete.css';
 import './SearchBar.css';
 
 class SearchBar extends React.Component {
-
   constructor (props) {
     super(props);
     
@@ -36,7 +35,7 @@ class SearchBar extends React.Component {
       return '';
     };
   }
-
+  
   handleSortByChange (sortByOption) {
     this.setState({
       sortBy: sortByOption
@@ -53,26 +52,26 @@ class SearchBar extends React.Component {
     this.setState({
       location: event.target.value
     });
-  }
-
+  }  
+  
   handleSearch (event) {
     if (this.state.term && this.state.location) {
       this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
     } event.preventDefault()
   }
-
+  
   handleKeyPress (event) {
     if (event.key === 'Enter') {
       //console.log('Enter clicked!');     
       this.btn.click();
     };
   }
-
+  
   handleSortKeyPress () {
       //console.log('Mouse clicked!');
       this.btn.click();
       
-  };
+  }
   
   renderSortByOptions () {
     return Object.keys(this.sortByOptions).map(sortByOption => {
@@ -80,7 +79,7 @@ class SearchBar extends React.Component {
       return <li onMouseDown={this.handleSortByChange.bind(this, sortByOptionValue)} onClick={this.handleSortKeyPress} className={this.getSortByClass(sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>
     });
   }
-
+  
   render() {    
     return (
       <div className="SearchBar">
@@ -90,10 +89,10 @@ class SearchBar extends React.Component {
           </ul>
         </div>
         <div className="SearchBar-fields">
-          { /*<input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />
-          <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={this.handleKeyPress} /> */ }
-          <Autocomplete suggestions={["Asian", "British", "Italian", "American", "Indian"]} placeholder="Search Businesses" handleTermChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />
-          <Autocomplete suggestions={["Rome", "Paris", "London", "Berlin", "Madrid"]} placeholder="Where?" onChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />
+          <input placeholder="Search Businesses" onChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />
+          <input placeholder="Where?" onChange={this.handleLocationChange} onKeyPress={this.handleKeyPress} />
+          { /*<Autocomplete suggestions={["Asian", "British", "Italian", "American", "Indian"]} placeholder="Search Businesses" handleTermChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />
+          <Autocomplete suggestions={["Rome", "Paris", "London", "Berlin", "Madrid"]} placeholder="Where?" onChange={this.handleTermChange} onKeyPress={this.handleKeyPress} />*/ }
         </div>
         <div className="SearchBar-submit">
           <a onClick={this.handleSearch} ref={node => (this.btn = node)}>Let's Go</a>

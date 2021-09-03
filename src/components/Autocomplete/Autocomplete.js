@@ -2,7 +2,6 @@ import React , { Component } from 'react';
 import '../SearchBar/SearchBar.css'
 import './Autocomplete.css';
 
-
 class Autocomplete extends Component {
     constructor(props) {
       super(props);
@@ -13,7 +12,7 @@ class Autocomplete extends Component {
         userInput: ""
       };      
     }
-
+    
     onChange = e => {
         const { suggestions } = this.props;
         const userInput = e.currentTarget.value;
@@ -30,7 +29,7 @@ class Autocomplete extends Component {
           userInput: e.currentTarget.value
         });
     };
-
+    
     onClick = e => {
       this.setState({
         activeSuggestion: 0,
@@ -78,7 +77,7 @@ class Autocomplete extends Component {
         } = this;
       
         let suggestionsListComponent;
-
+        
         if (showSuggestions && userInput) {
             if (filteredSuggestions.length) {
                 suggestionsListComponent = (
@@ -100,23 +99,23 @@ class Autocomplete extends Component {
             );
           } else {
             suggestionsListComponent = (
-              <div class="no-suggestions">
-                <em>No suggestions available.</em>
-              </div>
+                <div class="no-suggestions">
+                    <em>No suggestions available.</em>
+                </div>
             );
           }
         }
         console.log('props', this.props)
         return (
-          <div className='input-autocomplete'>
-            <input
-                placeholder={this.props.placeholder}
-                type="text"
-                onChange={onChange}
-                onKeyDown={onKeyDown}
-                value={userInput}                
-            />
-            {suggestionsListComponent}
+            <div className='input-autocomplete'>
+                <input
+                    placeholder={this.props.placeholder}
+                    type="text"
+                    onChange={onChange}
+                    onKeyDown={onKeyDown}
+                    value={userInput}                
+                />
+                {suggestionsListComponent}
           </div>
         );
     }
