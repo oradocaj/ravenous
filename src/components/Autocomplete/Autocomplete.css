@@ -22,6 +22,7 @@ body {
     overflow-y: auto;
     padding-left: 0;
     width: calc(300px + 1rem);
+    background-color: #fff;
   }
   
   .suggestions li {
@@ -39,3 +40,4 @@ body {
   .suggestions li:not(:last-of-type) {
     border-bottom: 1px solid #999;
   }
+  
