@@ -1,9 +1,9 @@
 !!!!!!!!!!!!!!!Run http://cors-anywhere.herokuapp.com/corsdemo before starting app.!!!!!!!!!!!!!!!
 !!!                                                                                            !!!
-!!!  Example entry:                                                                             !!!
+!!!  Example entry:                                                                            !!!
 !!!                                                                                            !!!
-!!!  Search Businesses (Type of food): Italian                                                  !!!
-!!!  Where? (City): London                                                                      !!!
+!!!  Search Businesses (Type of food): Italian                                                 !!!
+!!!  Where? (City): London                                                                     !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # Getting Started with Create React App
